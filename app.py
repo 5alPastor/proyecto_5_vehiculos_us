@@ -5,21 +5,20 @@ import plotly.express as px
 
 
 #leer archivo con los datos
-car_data = pd.read_csv(r'C:\Users\jmrg2\Documents\Data analitics\proyectos\5to proyecto\Entorno virtual\proyecto_autos_us\proyecto_5_vehiculos_us\vehicles_us.csv')
-
+car_data = pd.read_csv('vehicles_us.csv')
 
 #header
 st.header('Información sobre precios de vehículos')
 
 
-hist_button = st.button('Frecuencia de Precios de Vehículos (histograma)') # crear un botón
+hist_button = st.button('Frecuencia de Precios de Vehículos (Histograma)') # crear un botón
         
 if hist_button: # al hacer clic en el botón
     # escribir un mensaje
     st.write('Creación de un histograma con precio de los autos')
             
     # crear un histograma
-    fig = px.histogram(car_data, x="price", labels={'price':'Precio'})
+    fig = px.histogram(car_data, x="price", title = "Histograma", labels={'price':'Precio'})
     
     #Cambiar el nombre del eje Y
     fig.update_layout(
